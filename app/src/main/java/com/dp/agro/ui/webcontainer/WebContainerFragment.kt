@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.dp.agro.databinding.FragmentWebContainerBinding
 
 class WebContainerFragment : Fragment() {
@@ -15,6 +17,7 @@ class WebContainerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWebContainerBinding.inflate(inflater, container, false)
+        binding.toolbar.setupWithNavController(findNavController())
         return binding.root
     }
 }

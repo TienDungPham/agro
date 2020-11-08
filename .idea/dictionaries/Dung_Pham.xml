@@ -2,6 +2,8 @@
   <dictionary name="Dung Pham">
     <words>
       <w>agro</w>
+      <w>firestore</w>
+      <w>tflite</w>
     </words>
   </dictionary>
 </component>
