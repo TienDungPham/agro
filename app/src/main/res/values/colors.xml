@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#2196F3</color>
+    <color name="primaryVariantColor">#0069C0</color>
+    <color name="onPrimaryColor">#FFFFFF</color>
+
+    <color name="secondaryColor">#1976D2</color>
+    <color name="secondaryVariantColor">#004BA0</color>
+    <color name="onSecondaryColor">#FFFFFF</color>
+
+    <color name="accentColor">#EF5350</color>
+
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#CDFFFFFF</color>
+
+    <color name="iconColor">#80000000</color>
+    <color name="backgroundColor">#FFFFFF</color>
+
+    <color name="cameraNavigationBarColor">#000000</color>
+</resources>
