@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/state_1">
+        <Constraint
+            android:id="@+id/include_scan_result"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/state_2">
+        <Constraint
+            android:id="@+id/include_scan_result"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/state_3">
+        <Constraint
+            android:id="@+id/include_scan_result"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/transition_1"
+        app:constraintSetEnd="@+id/state_2"
+        app:constraintSetStart="@+id/state_1"
+        motion:duration="500" />
+    <Transition
+        android:id="@+id/transition_2"
+        app:constraintSetEnd="@+id/state_3"
+        app:constraintSetStart="@+id/state_2"
+        motion:duration="1000">
+        <OnSwipe
+            app:touchAnchorSide="middle"
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@+id/include_scan_result" />
+    </Transition>
+</MotionScene>

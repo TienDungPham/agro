@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Agro</string>
+    <string name="account">Account</string>
+    <string name="setting">Setting</string>
+    <string name="image_description">This is image!</string>
+    <string name="welcome_to_agro">Welcome to Agro</string>
+    <string name="to_start_using">To start using Agro, we will need to use your camera device. Tap Agree to continue</string>
+    <string name="agree">Agree</string>
+    <string name="sign_out">Sign out</string>
+    <string name="agro_regularly_checks">Agro regularly checks your data and synced to remote server. You will be notified anytime data synced.</string>
+    <string name="sign_in_to">Sign in to start sync your data and no worry about lose your scan data.</string>
+    <string name="sign_in">Sign in</string>
+    <string name="history">History</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="search">Search</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="treatments">Treatments</string>
+    <string name="read_more">Read more</string>
+    <string name="open">Open</string>
+    <string name="tap_to_start">Tap scan to start detecting</string>
+    <string name="recent_scan">Recent Scan</string>
 </resources>

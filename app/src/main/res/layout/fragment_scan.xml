@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion_base"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/camera_scan_scene">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/preview_camera"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#CD000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_camera_flip"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_description"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_camera_scan"
+                app:layout_constraintEnd_toStartOf="@+id/btn_camera_scan"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_camera_scan"
+                app:srcCompat="@drawable/icon_camera_flip_rounded" />
+
+            <ImageButton
+                android:id="@+id/btn_camera_scan"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_description"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_camera_select"
+                app:layout_constraintStart_toEndOf="@+id/btn_camera_flip"
+                app:srcCompat="@drawable/icon_camera_scan_rounded" />
+
+            <ImageButton
+                android:id="@+id/btn_camera_select"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_description"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_camera_scan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_camera_scan"
+                app:layout_constraintTop_toTopOf="@+id/btn_camera_scan"
+                app:srcCompat="@drawable/icon_camera_select_rounded" />
+
+            <TextView
+                android:id="@+id/text_camera_guide"
+                style="@style/smallSecondaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/background_camera_guide"
+                android:text="@string/tap_to_start"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/btn_camera_scan"
+                app:layout_constraintEnd_toEndOf="@+id/btn_camera_scan"
+                app:layout_constraintStart_toStartOf="@+id/btn_camera_scan" />
+
+            <ImageView
+                android:id="@+id/img_selected"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/image_description"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/include_scan_result"
+                layout="@layout/include_scan_result" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_camera_appbar"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:toolbarId="@+id/toolbar">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    style="@style/CameraToolbarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:menu="@menu/main_menu" />
+
+                <TextView
+                    android:id="@+id/title_app"
+                    style="@style/bigPrimaryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,2 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources />
+<resources>
+
+    <style name="bigPrimaryText">
+        <item name="android:color">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/textSizeBig</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="mediumPrimaryText">
+        <item name="android:color">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="smallSecondaryText">
+        <item name="android:color">@color/secondaryTextColor</item>
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="ActionModeStyle" parent="Widget.AppCompat.ActionMode">
+        <item name="background">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="CameraToolbarStyle">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.DayNight</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:theme">@style/CameraToolbarTheme</item>
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.DayNight</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:theme">@style/ToolbarTheme</item>
+    </style>
+
+    <style name="TabLayoutNoCapStyle" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+</resources>

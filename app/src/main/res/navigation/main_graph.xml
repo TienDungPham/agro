@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/scan_des">
+    <fragment
+        android:id="@+id/scan_des"
+        android:name="com.dp.agro.ui.scan.ScanFragment"
+        android:label="Scan"
+        tools:layout="@layout/fragment_scan">
+        <action
+            android:id="@+id/action_scan_des_to_web_container_des"
+            app:destination="@id/web_container_des" />
+    </fragment>
+    <fragment
+        android:id="@+id/scan_result_des"
+        android:name="com.dp.agro.ui.scanresult.ScanResultFragment"
+        android:label="Scan Result"
+        tools:layout="@layout/fragment_scan_result">
+        <action
+            android:id="@+id/action_scan_result_des_to_web_container_des"
+            app:destination="@id/web_container_des" />
+        <argument
+            android:name="disease_slug"
+            android:defaultValue="unknown"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/account_des"
+        android:name="com.dp.agro.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/setting_des"
+        android:name="com.dp.agro.ui.setting.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/dashboard_des"
+        android:name="com.dp.agro.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboard_des_to_scan_result_des"
+            app:destination="@id/scan_result_des" />
+    </fragment>
+    <fragment
+        android:id="@+id/web_container_des"
+        android:name="com.dp.agro.ui.webcontainer.WebContainerFragment"
+        android:label="Web Container"
+        tools:layout="@layout/fragment_web_container">
+        <argument
+            android:name="web_link"
+            android:defaultValue="unknown"
+            app:argType="string" />
+    </fragment>
+</navigation>
