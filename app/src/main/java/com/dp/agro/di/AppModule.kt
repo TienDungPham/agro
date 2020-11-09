@@ -1,6 +1,8 @@
 package com.dp.agro.di
 
 import com.dp.agro.data.source.AppRepository
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.firestoreSettings
@@ -32,6 +34,12 @@ abstract class AppModule {
             }
             db.firestoreSettings = settings
             return db
+        }
+
+        @Singleton
+        @Provides
+        fun providerAnalytics(): FirebaseAnalytics {
+            return Firebase.analytics
         }
 
         @Singleton

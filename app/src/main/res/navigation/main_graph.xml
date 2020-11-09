@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/setting_des"
         android:name="com.dp.agro.ui.setting.SettingFragment"
-        android:label="Setting"
+        android:label="@string/setting_label"
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/dashboard_des"
@@ -54,5 +54,14 @@
             android:name="web_link"
             android:defaultValue="unknown"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/explore_des"
+        android:name="com.dp.agro.ui.explore.ExploreFragment"
+        android:label="@string/explore_label"
+        tools:layout="@layout/fragment_explore">
+        <action
+            android:id="@+id/action_exlore_des_to_scan_result_des"
+            app:destination="@id/scan_result_des" />
     </fragment>
 </navigation>

@@ -87,7 +87,7 @@
 
                 <TextView
                     android:id="@+id/text_disease_description"
-                    style="@style/smallSecondaryText"
+                    style="@style/mediumPrimaryText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

@@ -112,7 +112,8 @@
                     style="@style/CameraToolbarStyle"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:menu="@menu/main_menu" />
+                    app:menu="@menu/main_menu"
+                    app:navigationIcon="@drawable/icon_library" />
 
                 <TextView
                     android:id="@+id/title_app"

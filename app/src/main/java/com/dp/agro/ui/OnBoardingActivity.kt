@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.dp.agro.SharedPrefSingleton
 import com.dp.agro.databinding.ActivityOnBoardingBinding
 import com.dp.agro.utils.allPermissionsGranted
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +17,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val sharedPref = (application as SharedPrefSingleton).getSharedPrefs()
+
         binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         binding.btnAgree.setOnClickListener {
             startApp()

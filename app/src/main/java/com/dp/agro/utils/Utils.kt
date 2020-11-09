@@ -3,6 +3,7 @@ package com.dp.agro.utils
 import android.Manifest
 import android.app.Activity
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
@@ -10,6 +11,7 @@ import androidx.core.content.ContextCompat
 import com.dp.agro.R
 import java.io.File
 import java.io.FileOutputStream
+import java.util.*
 
 fun Activity.allPermissionsGranted() =
     arrayOf(
@@ -56,4 +58,15 @@ fun nonFallbackTryCatch(f: () -> Unit) {
         f.invoke()
     } catch (e: Exception) {
     }
+}
+
+fun changeLanguage(context: Activity, languageCode: String) {
+    val locale = Locale(languageCode)
+    Locale.setDefault(locale)
+    val config: Configuration = context.baseContext.resources.configuration
+    config.locale = locale
+    context.baseContext.resources.updateConfiguration(
+        config,
+        context.baseContext.resources.displayMetrics
+    )
 }

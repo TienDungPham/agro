@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Agro</string>
+    <string name="account">Tài khoản</string>
+    <string name="setting">Cài đặt</string>
+    <string name="image_description">Đây là hình ảnh!</string>
+    <string name="welcome_to_agro">Chào mừng tới với Agro</string>
+    <string name="to_start_using">Để xử dụng Agro, chúng tôi cần truy cập camera trên thiết bị của bạn. Nhấn Chấp Nhận để tiếp tục</string>
+    <string name="agree">Chấp nhận</string>
+    <string name="sign_out">Đăng xuất</string>
+    <string name="agro_regularly_checks">Agro sẽ thường xuyên đồng bộ dữ liệu của bạn. Bạn sẽ được thông báo khi đồng bộ xong</string>
+    <string name="sign_in_to">Đăng nhập để đồng bộ hóa dữ liệu của bạn</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="history">Lịch sử</string>
+    <string name="dictionary">Thư viện</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="copy">Copy</string>
+    <string name="share">Chia sẻ</string>
+    <string name="symptoms">Triệu chứng</string>
+    <string name="treatments">Cách chữa</string>
+    <string name="read_more">Đọc thêm</string>
+    <string name="open">Mở</string>
+    <string name="tap_to_start">Nhấn quét để tìm kiếm</string>
+    <string name="recent_scan">Lượt quét gần đây</string>
+
+    <string name="setting_label">Cài Đặt</string>
+    <string name="theme">Chủ đề</string>
+    <string name="system_theme">Chủ đề hệ thống</string>
+    <string name="light_theme">Chủ đề sáng</string>
+    <string name="dark_theme">Chủ đề tối</string>
+
+    <string name="explore_label">Khám Phá</string>
+</resources>

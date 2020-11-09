@@ -7,6 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -61,8 +62,20 @@ class ScanFragment : Fragment() {
 
         classifyMediator = ClassifyMediator(labeler) {
             // TODO: Save scan result and change to dynamic result
-            startResultScreen()
-            viewModel.findDiseaseBySlug("maize_lethal_necrosis")
+            if (it == "unknown") {
+                val toast = Toast.makeText(
+                    requireContext(),
+                    "No disease found!", Toast.LENGTH_SHORT
+                )
+                toast.setGravity(Gravity.CENTER_VERTICAL or Gravity.CENTER_HORIZONTAL, 0, 0)
+                toast.show()
+                binding.imgSelected.visibility = View.INVISIBLE
+                binding.imgSelected.setImageDrawable(null)
+                startCamera(false)
+            } else {
+                startResultScreen()
+                viewModel.findDiseaseBySlug(it)
+            }
         }
     }
 
@@ -75,16 +88,16 @@ class ScanFragment : Fragment() {
         binding.toolbar.apply {
             setOnMenuItemClickListener {
                 when (it.itemId) {
-                    R.id.to_account -> {
-                        findNavController().navigate(R.id.account_des)
-                        true
-                    }
+
                     R.id.to_setting -> {
                         findNavController().navigate(R.id.setting_des)
                         true
                     }
                     else -> false
                 }
+            }
+            setNavigationOnClickListener {
+                findNavController().navigate(R.id.explore_des)
             }
         }
 
@@ -105,7 +118,9 @@ class ScanFragment : Fragment() {
         }
 
         binding.includeScanResult.apply {
-            btnSearch.setOnClickListener { googleSearch(textDiseaseName.text.toString()) }
+            btnSearch.setOnClickListener {
+                googleSearch(textDiseaseName.text.toString())
+            }
             btnCopy.setOnClickListener { copyToClipBoard(textDiseaseName.text.toString()) }
             btnShare.setOnClickListener { shareScreenshot() }
         }
@@ -242,7 +257,10 @@ class ScanFragment : Fragment() {
     }
 
     private fun googleSearch(query: String) {
-
+        val searchUrl = "https://google.com/search?q=$query"
+        val searchIntent = Intent(Intent.ACTION_VIEW);
+        searchIntent.data = Uri.parse(searchUrl);
+        startActivity(Intent.createChooser(searchIntent, "Where to search?"))
     }
 
     companion object {

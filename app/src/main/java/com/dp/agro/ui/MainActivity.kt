@@ -3,6 +3,7 @@ package com.dp.agro.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.dp.agro.SharedPrefSingleton
 import com.dp.agro.databinding.ActivityMainBinding
 import com.dp.agro.utils.allPermissionsGranted
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val sharedPref = (application as SharedPrefSingleton).getSharedPrefs()
+
         if (allPermissionsGranted()) {
             binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
