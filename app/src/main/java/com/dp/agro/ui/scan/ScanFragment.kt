@@ -55,14 +55,19 @@ class ScanFragment : Fragment() {
             .setAssetFilePath("plant_diseases/model.tflite")
             .build()
         val customImageLabelerOptions = CustomImageLabelerOptions.Builder(localModel)
-            .setConfidenceThreshold(0.8f)
+            .setConfidenceThreshold(0.5f)
             .setMaxResultCount(1)
             .build()
         val labeler = ImageLabeling.getClient(customImageLabelerOptions)
 
         classifyMediator = ClassifyMediator(labeler) {
             // TODO: Save scan result and change to dynamic result
-            if (it == "unknown") {
+            if (it == "unknown"
+                || it == "soy_healthy"
+                || it == "cabbage_healthy"
+                || it == "tomato_healthy"
+                || it == "maize_healthy"
+            ) {
                 val toast = Toast.makeText(
                     requireContext(),
                     "No disease found!", Toast.LENGTH_SHORT

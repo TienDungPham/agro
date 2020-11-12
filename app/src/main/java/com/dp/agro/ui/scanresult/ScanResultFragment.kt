@@ -59,7 +59,7 @@ class ScanResultFragment : Fragment() {
                     .placeholder(R.drawable.icon_error_rounded)
                     .into(imgDisease)
                 Glide.with(requireContext())
-                    .load(it.imageUrl)
+                    .load(it.thumbnailUrl)
                     .transform(CenterCrop())
                     .placeholder(R.drawable.icon_error_rounded)
                     .into(binding.imgDisease)

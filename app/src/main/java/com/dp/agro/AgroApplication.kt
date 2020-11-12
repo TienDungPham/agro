@@ -8,9 +8,9 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class AgroApplication : MultiDexApplication(), SharedPrefSingleton {
     override fun onCreate() {
-        if (BuildConfig.DEBUG) {
-            enableStrictMode()
-        }
+        //if (BuildConfig.DEBUG) {
+        //    enableStrictMode()
+        //}
         super.onCreate()
     }
 
